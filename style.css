@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: monospace, 'Courier New', Courier;
+    font-weight: bolder;
+    color: #0063aa;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+    background-size: 600% 600%;
+    animation: weatherGradient 20s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes weatherGradient {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.grid-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 10px;
+}
+
+.search-container {
+    grid-column: 1/4;
+}
+
+.input-design {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+input {
+    border: none;
+    padding: 15px 32px;
+    color: #0063aa;
+    border-radius: 10px 0 0 10px;
+    flex-grow: 1;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 16px;
+}
+
+.search-button, .temperature-button {
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: #26e2fd;
+    background-color: #0063aa;
+    padding: 15px 32px;
+    box-shadow: none;
+    font-family: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.current-location {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 20px;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+
+.temperature {
+    grid-row: 4/5;
+    font-size: 50px;
+}
+
+#Fahrenheit {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0063aa;
+    color: #26e2fd;
+    border: none;
+    font-family: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+}
+
+.latitude-longitude {
+    grid-column: 3/4;
+    font-size: 30px;
+}
+
+.forecast {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+.suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #0063aa;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100;
+    box-sizing: border-box;
+    top: 100%;
+    left: 0;
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #26e2fd;
+    color: white;
+}
+
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#current-weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-container {
+        grid-column: 1;
+    }
+    
+    .current-location,
+    .latitude-longitude,
+    .forecast {
+        grid-column: 1;
+    }
+    
+    .current-location {
+        grid-row: auto;
+    }
+
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .latitude-longitude {
+        font-size: 24px;
+    }
+    
+    .temperature {
+        font-size: 40px;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    input,
+    .search-button,
+    .temperature-button {
+        padding: 12px 24px;
+    }
+
+    .weather-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .latitude-longitude {
+        font-size: 20px;
+    }
+    
+    .temperature {
+        font-size: 32px;
+    }
+}

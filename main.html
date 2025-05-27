@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherView</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="search-container">
+            <div class="input-design">  
+            <input type="text" placeholder="Enter Location">
+            <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="current-location">
+            <p>Location</p>
+            <div class="weather-icon-container" style="grid-column: 2; grid-row: 2;">
+            <div class="weather-icon" id="current-weather-icon"></div>
+            </div>
+        </div>
+
+        <div class="temperature">
+            <div class="temperature-number"> 0&deg;</div>
+            <button class="temperature-button" id="Fahrenheit">Fahrenheit</button>
+        </div>
+
+        <div class="latitude-longitude">
+            <p>Latitude : 0</p>
+            <p>Longitude : 0</p>
+        </div>
+
+        <div class="forecast">
+            <p>Tomorrow</p>
+            <p>Weather</p>
+            <img src="" alt="">
+        </div>
+
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
